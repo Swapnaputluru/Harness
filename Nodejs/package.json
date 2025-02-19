@@ -6,7 +6,7 @@
 "scripts": {
   "start": "node index.js",
   "test": "mocha test/*.test.js",
-  "build": "echo 'Building the app...' && mkdir -p dist && cp -r * dist/"
+  "build": "echo 'Building the app...' && rm -rf dist && mkdir -p dist && cp -r $(ls -A | grep -v dist) dist/"
 },
     "dependencies": {
       "express": "^4.17.1"

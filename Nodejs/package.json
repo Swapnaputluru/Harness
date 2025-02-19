@@ -5,9 +5,14 @@
     "main": "index.js",
     "scripts": {
       "start": "node index.js",
-      "test": "echo \"Error: no test specified\" && exit 1"
+      "test": "mocha test/*.test.js"
     },
     "dependencies": {
       "express": "^4.17.1"
+    },
+    "devDependencies": {
+      "mocha": "^10.2.0",
+      "chai": "^4.3.7"
     }
   }
+  

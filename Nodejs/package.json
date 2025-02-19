@@ -3,10 +3,11 @@
     "version": "1.0.0",
     "description": "A simple Node.js app for CI practice in Harness",
     "main": "index.js",
-    "scripts": {
-      "start": "node index.js",
-      "test": "mocha test/*.test.js"
-    },
+"scripts": {
+  "start": "node index.js",
+  "test": "mocha test/*.test.js",
+  "build": "echo 'Building the app...' && mkdir -p dist && cp -r * dist/"
+},
     "dependencies": {
       "express": "^4.17.1"
     },

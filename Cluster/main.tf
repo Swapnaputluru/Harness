@@ -17,7 +17,7 @@ resource "google_container_cluster" "gke_cluster" {
 resource "google_container_node_pool" "primary_nodes" {
   name       = "node-pool"
   cluster    = google_container_cluster.gke_cluster.name
-  node_count = 1
+  node_count = 2
 
   node_config {
     service_account = "devops-e2e-sa@driven-utility-451505-c1.iam.gserviceaccount.com"

@@ -1,23 +1,14 @@
 provider "google" {
   project = "driven-utility-451505-c1"
-  zone = "europe-west1-b"
+  zone    = "europe-west1-b"  # Specify the single zone
 }
 
 resource "google_container_cluster" "gke_cluster" {
   name     = "my-gke-cluster1"
-  #location = "europe-west1"
+  location = "europe-west1-b"  # Ensure the cluster is single-zone
 
-  remove_default_node_pool = true
-  initial_node_count       = 1
-  lifecycle {
-    prevent_destroy = false
-  }
-}
-
-resource "google_container_node_pool" "primary_nodes" {
-  name       = "node-pool"
-  cluster    = google_container_cluster.gke_cluster.name
-  node_count = 1
+  initial_node_count = 1  # Only one VM as a node
+  node_locations     = ["europe-west1-b"]  # Restrict nodes to a single zone
 
   node_config {
     service_account = "devops-e2e-sa@driven-utility-451505-c1.iam.gserviceaccount.com"
@@ -27,10 +18,8 @@ resource "google_container_node_pool" "primary_nodes" {
       "https://www.googleapis.com/auth/cloud-platform"
     ]
   }
-  lifecycle {
-    # Remove prevent_destroy if present
-    prevent_destroy = false
-  }  
-}
 
-#commit1
+  lifecycle {
+    prevent_destroy = false
+  }
+}

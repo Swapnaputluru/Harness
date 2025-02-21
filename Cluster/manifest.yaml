@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 19980617/harness:<+pipeline.executionId>
+        image: 19980617/harness:9phxvQsXQmiBdO2fdSAUHQ
         ports:
         - containerPort: 80
 

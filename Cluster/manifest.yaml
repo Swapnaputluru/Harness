@@ -1,22 +1,88 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: nginx
+#   labels:
+#     app: nginx-app
+# spec:
+#   replicas: 2
+#   selector:
+#     matchLabels:
+#       app: nginx-app
+#   template:
+#     metadata:
+#       labels:
+#         app: nginx-app
+#     spec:
+#       containers:
+#       - name: nginx
+#         image: 19980617/harness:9phxvQsXQmiBdO2fdSAUHQ
+#         ports:
+#         - containerPort: 80
+
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: nginx-service
+# spec:
+#   type: LoadBalancer  # Exposing NGINX via LoadBalancer
+#   selector:
+#     app: nginx-app
+#   ports:
+#     - name: http
+#       protocol: TCP
+#       port: 80
+#       targetPort: 80
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: nginx-stable
   labels:
     app: nginx-app
+    version: stable
 spec:
-  replicas: 2
+  replicas: 2  # Same as Canary to balance traffic
   selector:
     matchLabels:
       app: nginx-app
+      version: stable
   template:
     metadata:
       labels:
         app: nginx-app
+        version: stable
     spec:
       containers:
       - name: nginx
-        image: 19980617/harness:9phxvQsXQmiBdO2fdSAUHQ
+        image: 19980617/harness:stable-version
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-canary
+  labels:
+    app: nginx-app
+    version: canary
+spec:
+  replicas: 2  # Same as Stable to split traffic evenly
+  selector:
+    matchLabels:
+      app: nginx-app
+      version: canary
+  template:
+    metadata:
+      labels:
+        app: nginx-app
+        version: canary
+    spec:
+      containers:
+      - name: nginx
+        image: 19980617/harness:9phxvQsXQmiBdO2fdSAUHQ  # Canary version
         ports:
         - containerPort: 80
 
@@ -26,9 +92,9 @@ kind: Service
 metadata:
   name: nginx-service
 spec:
-  type: LoadBalancer  # Exposing NGINX via LoadBalancer
+  type: LoadBalancer
   selector:
-    app: nginx-app
+    app: nginx-app  # Matches both stable and canary versions
   ports:
     - name: http
       protocol: TCP

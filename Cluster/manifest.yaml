@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: <+artifacts.nginxartifact.image>
+        image: <+steps.BuildAndPushDockerRegistry_1.output.image>
         ports:
         - containerPort: 80
 

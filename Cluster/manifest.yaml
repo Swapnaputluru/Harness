@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: <+pipeline.stages.build.spec.execution.steps.BuildAndPushDockerRegistry_1.artifact_BuildAndPushDockerRegistry_1.stepArtifacts.publishedImageArtifacts[0].imageName>:<+pipeline.stages.build.spec.execution.steps.BuildAndPushDockerRegistry_1.artifact_BuildAndPushDockerRegistry_1.stepArtifacts.publishedImageArtifacts[0].tag> # Using official NGINX image
+        image: <+artifacts.nginx-artifact.image>
         ports:
         - containerPort: 80
 

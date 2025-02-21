@@ -56,7 +56,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 19980617/harness:stable-version
+        image: 19980617/harness:o-OVdAU4SSaQqDNISlTRgw
         ports:
         - containerPort: 80
 

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 19980617/harness:<+pipeline.executionId>  # Using official NGINX image
+        image: 19980617/harness:<+pipeline.stages.build.spec.execution.steps.BuildAndPushDockerRegistry_1.artifact_BuildAndPushDockerRegistry_1.stepArtifacts.publishedImageArtifacts[0].tag>  # Using official NGINX image
         ports:
         - containerPort: 80
 

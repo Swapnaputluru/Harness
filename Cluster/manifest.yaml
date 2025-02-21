@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:latest  # Using official NGINX image
+        image: 19980617/harness:<+pipeline.executionId>  # Using official NGINX image
         ports:
         - containerPort: 80
 

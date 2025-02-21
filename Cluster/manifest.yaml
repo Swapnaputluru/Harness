@@ -39,11 +39,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-stable
+  annotations:
+    harness.io/direct-apply: "true"  # Tells Harness to apply this directly, not as part of canary
   labels:
     app: nginx-app
     version: stable
 spec:
-  replicas: 2  # Same as Canary to balance traffic
+  replicas: 2  
   selector:
     matchLabels:
       app: nginx-app
@@ -69,7 +71,7 @@ metadata:
     app: nginx-app
     version: canary
 spec:
-  replicas: 2  # Same as Stable to split traffic evenly
+  replicas: 2  
   selector:
     matchLabels:
       app: nginx-app
@@ -82,7 +84,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 19980617/harness:9phxvQsXQmiBdO2fdSAUHQ  # Canary version
+        image: 19980617/harness:9phxvQsXQmiBdO2fdSAUHQ
         ports:
         - containerPort: 80
 
@@ -94,7 +96,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: nginx-app  # Matches both stable and canary versions
+    app: nginx-app  
   ports:
     - name: http
       protocol: TCP

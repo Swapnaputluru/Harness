@@ -2,9 +2,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginx-ingress
-  annotations:
-    kubernetes.io/ingress.class: "nginx"  # Ensure it's using the correct Ingress class
-    # kubernetes.io/ingress.global-static-ip-name: "nginx-lb-ip"  # Optional, if using a static IP
 spec:
   rules:
   - http:
@@ -13,6 +10,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: nginx-blue  # Match the LoadBalancer service
+            name: nginx-service
             port:
               number: 80

@@ -19,6 +19,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 19980617/harness:9phxvQsXQmiBdO2fdSAUHQ  # Blue version
+        image: 19980617/harness:9phxvQsXQmiBdO2fdSAUHQ  # Replace with your Blue image version
         ports:
         - containerPort: 80

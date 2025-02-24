@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-stable
-  annotations:
-    harness.io/direct-apply: "true"
   labels:
     app: nginx-app
     version: stable
@@ -21,6 +19,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 19980617/harness:o-OVdAU4SSaQqDNISlTRgw  # Change this with your correct image
+        image: 19980617/harness:o-OVdAU4SSaQqDNISlTRgw  # Stable image version
         ports:
         - containerPort: 80

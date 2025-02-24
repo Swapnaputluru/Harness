@@ -2,8 +2,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginx-ingress
-  annotations:
-    kubernetes.io/ingress.global-static-ip-name: "nginx-lb-ip"  # Optional if using static IP
 spec:
   rules:
   - http:
@@ -12,6 +10,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: nginx-blue-service  # Start with Blue
+            name: nginx-service
             port:
               number: 80

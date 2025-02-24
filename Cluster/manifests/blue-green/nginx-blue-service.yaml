@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-stable
+  name: nginx-blue
 spec:
   selector:
     app: nginx

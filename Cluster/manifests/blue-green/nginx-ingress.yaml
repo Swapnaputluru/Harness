@@ -12,6 +12,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: nginx-active
+            name: nginx-blue
             port:
               number: 80

@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: nginx-service
 spec:
+  type: LoadBalancer
   selector:
-    app: nginx-app  # Matches both stable and canary pods
+    app: nginx-app  
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
-  type: ClusterIP
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80

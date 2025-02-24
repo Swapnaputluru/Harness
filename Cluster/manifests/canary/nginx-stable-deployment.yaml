@@ -2,11 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-stable
+  annotations:
+    harness.io/direct-apply: "true"  # Apply directly, not as part of canary
   labels:
     app: nginx-app
     version: stable
 spec:
-  replicas: 2
+  replicas: 2  
   selector:
     matchLabels:
       app: nginx-app
@@ -19,6 +21,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 19980617/harness:o-OVdAU4SSaQqDNISlTRgw  # Stable image version
+        image: 19980617/harness:o-OVdAU4SSaQqDNISlTRgw
         ports:
         - containerPort: 80

@@ -4,10 +4,10 @@ metadata:
   name: nginx-ingress
   annotations:
     nginx.ingress.kubernetes.io/canary: "true"
-    nginx.ingress.kubernetes.io/canary-weight: "50"  # 50% traffic to Canary
+    nginx.ingress.kubernetes.io/canary-weight: "50"  # 50% traffic to canary
 spec:
   rules:
-  - host: nginx.example.com  # Replace with your actual domain or LoadBalancer IP
+  - host: nginx.example.com  # Change to your domain or LB IP
     http:
       paths:
       - path: /

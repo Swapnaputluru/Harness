@@ -7,8 +7,8 @@ metadata:
 spec:
   selector:
     app: nginx
-    version: blue   # Initially routing traffic to BLUE deployment 
-    harness.io/color: blue
+    version: green   # Initially routing traffic to BLUE deployment 
+    harness.io/color: green
   ports:
     - protocol: TCP
       port: 80

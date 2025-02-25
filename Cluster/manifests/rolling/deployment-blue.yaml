@@ -5,17 +5,20 @@ metadata:
   labels:
     app: nginx
     version: blue
+    harness.io/color: blue  # Added this label
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: nginx
       version: blue
+      harness.io/color: blue  # Ensure selector matches labels in template
   template:
     metadata:
       labels:
         app: nginx
         version: blue
+        harness.io/color: blue  # Added this label
     spec:
       containers:
       - name: nginx

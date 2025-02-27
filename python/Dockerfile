@@ -5,7 +5,7 @@ FROM python:3.9
 WORKDIR /app
 
 # Copy the application files into the container
-COPY test_app.py requirements.txt ./
+COPY app.py requirements.txt ./
 
 # Install dependencies
 RUN pip install -r requirements.txt
@@ -14,4 +14,4 @@ RUN pip install -r requirements.txt
 EXPOSE 80
 
 # Run the application on port 80
-CMD ["python", "test_app.py"]
+CMD ["python", "app.py"]

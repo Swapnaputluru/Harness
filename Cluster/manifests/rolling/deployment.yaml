@@ -22,6 +22,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 19980617/harness:9phxvQsXQmiBdO2fdSAUHQ
+        image: <+artifact.image>
         ports:
         - containerPort: 80

@@ -22,6 +22,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: <+artifact.image>
+        image: 19980617/python:<+pipeline.variables.imageTag>
         ports:
         - containerPort: 80

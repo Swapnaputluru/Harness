@@ -7,7 +7,7 @@ def home():
     return """
     <h1>Welcome to My Python Web Application</h1>
     <p>This is a simple Flask application.</p>
-    <h2>Harness Deployment Info</h2>
+    <h2>Harness Deployment Information</h2>
     <ul>
         <li>🚀 Harness supports CI/CD for cloud-native applications.</li>
         <li>🛠️ You can implement <strong>chained pipelines</strong> for CI → Infra → CD.</li>

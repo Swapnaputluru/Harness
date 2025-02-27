@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return """
-    <h1>Welcome to My Python Web App</h1>
+    <h1>Welcome to My Python Web Application</h1>
     <p>This is a simple Flask application.</p>
     <h2>Harness Deployment Info</h2>
     <ul>

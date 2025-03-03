@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 19980617/python:$IMAGE_TAG
+        image: 19980617/python:${IMAGE_TAG}
         ports:
         - containerPort: 80
 EOF

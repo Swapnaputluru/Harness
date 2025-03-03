@@ -22,6 +22,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 19980617/python:{{ image_tag }}
+        image: 19980617/python:image_tag
         ports:
         - containerPort: 80

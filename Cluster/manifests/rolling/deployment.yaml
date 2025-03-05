@@ -21,7 +21,7 @@ spec:
         harness.io/color: blue
     spec:
       containers:
-      - name: nginx
-        image: 19980617/python:<+stage.variables.IMAGE_TAG>
-        ports:
-        - containerPort: 80
+        - name: nginx
+          image: 19980617/python:latest  # This will be updated dynamically
+          ports:
+            - containerPort: 80

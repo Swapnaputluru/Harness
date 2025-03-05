@@ -22,6 +22,6 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: 19980617/python:<+pipeline.variables.IMAGE_TAG>  # This will be updated dynamically
+          image: 19980617/python:{{IMAGE_TAG}}  # This will be updated dynamically
           ports:
             - containerPort: 80

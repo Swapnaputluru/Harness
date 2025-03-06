@@ -1,0 +1,3 @@
+image:
+  repository: "19980617/python"
+  tag: "<+serviceVariables.tag>"

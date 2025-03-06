@@ -1,4 +1,3 @@
 image:
-  repository: 19980617/python
-  tag: <+pipeline.variables.tag>
-
+  repository: <+artifacts.primary.imagePath>
+  tag: <+artifacts.primary.tag>

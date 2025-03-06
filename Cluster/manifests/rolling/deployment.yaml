@@ -22,6 +22,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: 19980617/python:<+image_tag>  # This will be updated dynamically
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+  # This will be updated dynamically
           ports:
             - containerPort: 80

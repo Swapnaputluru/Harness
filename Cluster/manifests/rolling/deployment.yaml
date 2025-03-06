@@ -22,6 +22,6 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: 19980617/python:{{ .Values.imageTag }}  # Helm templating
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"  # Helm templating
           ports:
-            - containerPort: 80 
+            - containerPort: 80  

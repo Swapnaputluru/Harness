@@ -1,2 +1,4 @@
-image: <+artifacts.primary.image>  
+image:
+  repository: 19980617/python
+  tag: <+pipeline.variables.tag>
 

@@ -1,3 +1,2 @@
-image:
-  repository: "19980617/python"
-  tag: "60"
+image: <+artifacts.primary.image>  
+  tag: <+pipeline.stages.build.output.image_tag>

@@ -1,2 +1,2 @@
 image: <+artifacts.primary.image>  
-  tag: <+pipeline.stages.build.output.image_tag>
+

@@ -1,3 +1,3 @@
 image:
   repository: "19980617/python"
-  tag: "{{ .Values.imageTag }}"
+  tag: <+serviceVariables.tag>
